@@ -18,7 +18,7 @@ router.get('/:id', (req, res, next) => {
 });
 
 router.get('/name/:name', (req, res, next) => {
-    queries.getUserByName(req.params.name).then(user => {
+    queries.getUserByName(req.body.name).then(user => {
         user
             ? res.json({ user })
             : res.status(404).json({ message: 'User not found.' });
