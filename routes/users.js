@@ -17,7 +17,7 @@ router.get('/:id', (req, res, next) => {
     }).catch(next);
 });
 
-router.get('/name/:name', (req, res, next) => {
+router.get('/name', (req, res, next) => {
     queries.getUserByName(req.body.name).then(user => {
         user
             ? res.json({ user })
