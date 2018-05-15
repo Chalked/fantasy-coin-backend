@@ -22,7 +22,7 @@ router.get('/:uid', (req, res, next) => {
 });
 
 router.put('/invest/:cid', (req, res, next) => {
-    queries.updateInvestment(req.params.cid, req.body.investment).then(collection => {
+    queries.updateInvestment(req.params.cid, req.body).then(collection => {
         res.json({ collection: collection[0] });
     }).catch(next);
 });
