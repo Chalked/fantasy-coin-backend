@@ -14,6 +14,8 @@ exports.up = function(knex, Promise) {
                 .references('id')
                 .inTable('users')
                 .onDelete('CASCADE');
+            table.integer('initial_investment').notNullable().defaultTo(0);
+            table.integer('current_USD');
             table.dateTime('collection_created').notNullable().defaultTo(knex.raw('CURRENT_TIMESTAMP'));
         }),
 

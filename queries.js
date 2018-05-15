@@ -13,12 +13,6 @@ module.exports = {
             .where('id', id)
             .first();
     },
-    getUserByName(name) {
-        return database('users')
-            .select()
-            .where('name', name)
-            .first();
-    },
     deleteUser(id) {
         return database('users')
             .delete()
