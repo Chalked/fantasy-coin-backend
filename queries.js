@@ -34,6 +34,13 @@ module.exports = {
             .select()
             .where('user_id', uid);
     },
+    updateInvestment(cid, value) {
+        return database('collections')
+            .where('cid', cid)
+            .update('initial_investment', value)
+            .returning('*')
+            .then(record => record[0]);
+    },  
     getCollectionInfo(cid) {
         return database('currencies')
             .select()
