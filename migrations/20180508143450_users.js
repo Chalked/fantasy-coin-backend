@@ -27,8 +27,8 @@ exports.up = function(knex, Promise) {
                 .onDelete('CASCADE');
             table.string('symbol').notNullable();
             table.string('name').notNullable();
-            table.integer('USD_invested').notNullable();
-            table.decimal('coin_amount', null).notNullable();
+            table.decimal('buy_rate', null).notNullable().defaultTo(0)
+            table.decimal('coin_amount', null).notNullable().defaultTo(0)
             table.dateTime('post_date').notNullable().defaultTo(knex.raw('CURRENT_TIMESTAMP'));
         })
     ]);
