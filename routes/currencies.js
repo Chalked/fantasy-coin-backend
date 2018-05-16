@@ -23,10 +23,17 @@ router.delete('/:id', (req, res, next) => {
     }).catch(next);
 });
 
-router.put('/:id', (req, res, next) => {
-    queries.updateCurrency(req.params.id, req.body.buy_rate, req.body.coin_amount).then(currency => {
+router.put('/buy/:id', (req, res, next) => {
+    queries.buyCurrency(req.params.id, req.body.buy_rate, req.body.coin_amount).then(currency => {
         res.json({ currency: currency[0] });
     }).catch(next);
 });
+
+router.put('/sell/:id', (req, res, next) => {
+    queries.sellCurrency(req.params.id, req.body.coin_amount).then(currency => {
+        res.json({ currency: currency[0] });
+    }).catch(next);
+});
+
 
 module.exports = router;
