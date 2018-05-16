@@ -35,7 +35,7 @@ router.put('/update/:cid', (req, res, next) => {
 
 router.put('/invest/:cid', (req, res, next) => {
     queries.updateInvestment(req.params.cid, req.body.investment).then(collection => {
-        res.json({ collection: collection[0] });
+        res.json({ collection: collection });
     }).catch(next);
 });
 
