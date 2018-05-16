@@ -29,6 +29,12 @@ module.exports = {
             .delete()
             .where('cid', cid);
     },
+    getCollection(cid) {
+        return database('collections')
+            .select()
+            .where('cid', cid)
+            .first();
+    },
     listCollections(uid) {
         return database('collections')
             .select()

@@ -15,6 +15,12 @@ router.delete('/:cid', (req, res, next) => {
     }).catch(next);
 });
 
+router.get('/cid/:cid', (req, res, next) => {
+    queries.getCollection(req.params.cid).then(collections=> {
+        res.json({ collection });
+    }).catch(next);
+});
+
 router.get('/:uid', (req, res, next) => {
     queries.listCollections(req.params.uid).then(collections => {
         res.json({ collections });
