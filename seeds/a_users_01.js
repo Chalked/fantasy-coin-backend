@@ -5,7 +5,8 @@ exports.seed = function(knex, Promise) {
       return knex('users').insert([
         {id: 1, name: 'Zackary Moore'},
         {id: 2, name: 'John Smith'},
-        {id: 3, name: 'Gizmo Thules'}
+        {id: 3, name: 'Gizmo Thules'},
+        {id: 4, name: 'Youngblood Zackary'}
       ]);
     }).then(() => {
       return knex.raw('ALTER SEQUENCE users_id_seq RESTART WITH 4;');
