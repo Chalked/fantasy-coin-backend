@@ -64,10 +64,10 @@ module.exports = {
             .delete()
             .where('currency_id', id);
     },
-    updateCurrency(id, values) {
+    updateCurrency(id, USD, coin) {
         return database('currencies')
             .where('id', id)
-            .update('currency', values)
+            .update({ USD_invested: USD, coin_amount: coin })
             .returning('*')
             .then(record => record[0]);
     }

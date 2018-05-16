@@ -24,7 +24,7 @@ router.delete('/:id', (req, res, next) => {
 });
 
 router.put('/:id', (req, res, next) => {
-    queries.updateCurrency(req.params.id, req.body).then(currency => {
+    queries.updateCurrency(req.params.id, req.body.USD_invested, req.body.coin_amount).then(currency => {
         res.json({ currency: currency[0] });
     }).catch(next);
 });
