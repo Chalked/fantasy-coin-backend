@@ -37,7 +37,7 @@ module.exports = {
     updateInvestment(cid, value) {
         return database('collections')
             .where('cid', cid)
-            .update('initial_investment', value)
+            .update({ initial_investment: value, current_USD: value })
             .returning('*')
             .then(record => record[0]);
     },  
