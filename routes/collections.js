@@ -21,6 +21,12 @@ router.get('/:uid', (req, res, next) => {
     }).catch(next);
 });
 
+router.put('/update/:cid', (req, res, next) => {
+    queries.updateUSD(req.params.cid, req.body.current_USD).then(collection => {
+        res.json({ collection: collection[0] });
+    }).catch(next);
+});
+
 router.put('/invest/:cid', (req, res, next) => {
     queries.updateInvestment(req.params.cid, req.body.investment).then(collection => {
         res.json({ collection: collection[0] });

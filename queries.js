@@ -40,6 +40,13 @@ module.exports = {
             .update({ initial_investment: value, current_USD: value })
             .returning('*')
             .then(record => record[0]);
+    },
+    updateUSD(cid, value) {
+        return database('collections')
+            .where('cid', cid)
+            .update('current_USD', value)
+            .returning('*')
+            .then(record => record[0]);
     },  
     getCollectionInfo(cid) {
         return database('currencies')
