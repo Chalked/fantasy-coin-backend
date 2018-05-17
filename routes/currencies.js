@@ -25,13 +25,13 @@ router.delete('/:id', (req, res, next) => {
 
 router.put('/buy/:id', (req, res, next) => {
     queries.buyCurrency(req.params.id, req.body.buy_rate, req.body.coin_amount).then(currency => {
-        res.json({ currency: currency[0] });
+        res.json({ currency: currency });
     }).catch(next);
 });
 
 router.put('/sell/:id', (req, res, next) => {
     queries.sellCurrency(req.params.id, req.body.coin_amount).then(currency => {
-        res.json({ currency: currency[0] });
+        res.json({ currency: currency });
     }).catch(next);
 });
 

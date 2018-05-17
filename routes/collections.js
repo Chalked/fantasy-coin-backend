@@ -29,7 +29,7 @@ router.get('/:uid', (req, res, next) => {
 
 router.put('/update/:cid', (req, res, next) => {
     queries.updateUSD(req.params.cid, req.body.current_USD).then(collection => {
-        res.json({ collection: collection[0] });
+        res.json({ collection: collection });
     }).catch(next);
 });
 
