@@ -13,6 +13,12 @@ Fantasy Coin is an iOS app that uses a mock investment system and several source
 - PostgreSQL
 - Heroku 
 
+### Local Setup
+
+- Clone this repository.
+- Make sure you have PostgreSQL installed & working on your machine. 
+- In terminal, `npm install`, then `npm run setup` and then `npm start`.
+
 ### Frontend Code: https://github.com/Chalked/fantasy-coin-frontend
 
 Created in 2018 by Zackary Moore
